@@ -3,43 +3,31 @@
 <head>
 <!-- CSS only -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<link rel="stylesheet" href="styling.css"/>
+
+
 <!-- JS, Popper.js, and jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-<script>
-$(document).ready(function(){
-  $("#a").click(function(){
-    var city = $("#city").val();
-    $.ajax({
-        url: "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=a8374e0de97c592f69507a3830971ce8",
-        method: "GET",
-      }).then(function (response) {
-        $("#temp").text(response.main.temp);
-      });
-  });
-});
+<script src="javascript.js">
+
 </script>
 
 </head>
 <body>
 
-  <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand">Weather Dashboard</a>
-    <div class="form-inline">
-      <input class="form-control mr-sm-2" type="text" aria-label="Search" id="city" placeholder="Type in a city">
-      <button class="btn btn-outline-info my-2 my-sm-0" class="form-inline"id="a">Search</button>
-    </div>
-  </nav>
+    <nav class="navbar navbar-light bg-dark">
+         Weather Dashboard
+      </nav>
+      
 
   <div class="container">
     <div class="row">
-      <div class="col-md-4" style="background-color: blue;">
+      <div class="col-md-4">
         <label for="city">Search for a City:</label>
         <input class="form-control" id="city" type="text"/>
-        <button class="btn btn-primary" id="a">Search</button>
+        <button class="btn btn-primary" id="cityBtn">Search</button>
         <ul class="list-group">
             <li class="list-group-item">Cras justo odio</li>
             <li class="list-group-item">Dapibus ac facilisis in</li>
@@ -48,8 +36,12 @@ $(document).ready(function(){
             <li class="list-group-item">Vestibulum at eros</li>
           </ul>
       </div>
-      <div class="col-lg-8" >
-        Atlanta
+      <div class="col-lg-8" ><h1 id="city-name"></h1></h1>
+        <h2 id="temp"> temp</h2>
+        <h3 id="humidity"> humidity</h3>
+        <h4 id="windspeed"> windspeed</h4>
+        <h5 id="uvindex"></h5>danger:<button type="button" class="btn btn-outline-danger">uvindex</button>
+        
 
       </div>
       <div class="container">
@@ -57,7 +49,7 @@ $(document).ready(function(){
         <div class="col-sm"></div>
         <div class="card" style="width: 12rem; background-color: blue;">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">Day1</h5>
               <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               
@@ -66,7 +58,7 @@ $(document).ready(function(){
         <div class="col-sm"></div>
         <div class="card" style="width: 12rem; background-color: blue;">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">day2</h5>
               <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               
@@ -75,7 +67,7 @@ $(document).ready(function(){
         <div class="col-sm"></div>
         <div class="card" style="width: 12rem; background-color: blue;">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">day3</h5>
               <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <a href="#" class="card-link">Card link</a>
@@ -85,7 +77,7 @@ $(document).ready(function(){
         <div class="col-sm"></div>
         <div class="card" style="width: 12em; background-color: blue; ">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">day4</h5>
               <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <a href="#" class="card-link">Card link</a>
@@ -95,7 +87,7 @@ $(document).ready(function(){
         <div class="col-sm"></div>
         <div class="card" style="width: 12rem; background-color: blue;">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">day5</h5>
               <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               <a href="#" class="card-link">Card link</a>
