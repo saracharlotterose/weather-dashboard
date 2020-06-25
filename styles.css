@@ -1,0 +1,17 @@
+#bebigger{
+    font-size:x-large;
+    color: white;
+}
+.card-title {
+    color: white!important;
+}
+.card-text {
+    color: white!important;
+}
+.card {
+    background-color: rgb(22, 127, 248)!important;
+    min-width: 100px;
+}
+.card-group {
+    padding-top: 20px!important;
+}

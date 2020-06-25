@@ -1,101 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
 <!-- CSS only -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="styles.css">
 
 <!-- JS, Popper.js, and jQuery -->
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
-<script src="javascript.js">
+<script src="javascript.js"></script>
 
-</script>
 
 </head>
 <body>
 
     <nav class="navbar navbar-light bg-dark">
-         Weather Dashboard
+         <span id="bebigger">Weather Dashboard</span>
       </nav>
       
 
   <div class="container">
-    <div class="row">
+    <div class="row" style="padding-top: 20px;">
       <div class="col-md-4">
-        <label for="city">Search for a City:</label>
-        <input class="form-control" id="city" type="text"/>
-        <button class="btn btn-primary" id="cityBtn">Search</button>
-        <ul class="list-group">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-          </ul>
+          <label for="city">Search for a City:</label>
+          <div class="form-inline">
+            <input class="form-control" id="city" type="text"/>
+            <button class="btn btn-primary" id="cityBtn" type="button">Search</button>
+          </div>
+        <ul class="list-group" style="padding-top: 20px; padding-bottom: 20px;" id="recentSearch">
+        </ul>
       </div>
-      <div class="col-lg-8" ><h1 id="city-name"></h1></h1>
-        <h2 id="temp"> temp</h2>
-        <h3 id="humidity"> humidity</h3>
-        <h4 id="windspeed"> windspeed</h4>
-        <h5 id="uvindex"></h5>danger:<button type="button" class="btn btn-outline-danger">uvindex</button>
-        
+      <div class="col-lg-8" ><h1 id="city-name"></h1>
+       <h2>Temp: <span id="temp"> </span></h2>
+        <h2>Humidity: <span id="humidity"></span></h3>
+        <h2>Windspeed: <span id="windspeed"></span></h4>
+        <h2 >UV Index: <button type="button" class="btn btn-outline-danger" id="uvindex">uvindex</button></h2>
+          <div class="card-group">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title" id="firstday"></h5>
+                  <i class='fas fa-bolt' style="font-size: 36px;" id="day1icon"></i>
+                  <p class="card-text">Temp: <span id="day1temp"></span></p>
+                  <p class="card-text">Humidity: <span id="day1humid"></span></p>
+                </div>
+              </div>
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title" id="secondday"></h5>
+                  <i class='fas fa-bolt' style="font-size: 36px;"></i>
+                  <p class="card-text">Temp: <span id="day2temp"></span></p>
+                  <p class="card-text">Humidity: <span id="day2humid"></span></p>
+                </div>
+              </div>
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title" id="thirdday"></h5>
+                  <i class='fas fa-bolt' style="font-size: 36px;"></i>
+                  <p class="card-text">Temp: <span id="day3temp"></span></p>
+                  <p class="card-text">Humidity: <span id="day3humid"></span></p>
+                </div>
+              </div>
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title" id="fourthday"></h5>
+                  <i class='fas fa-bolt' style="font-size: 36px;"></i>
+                  <p class="card-text">Temp: <span id="day4temp"></span></p>
+                  <p class="card-text">Humidity: <span id="day4humid"></span></p>
+                </div>
+              </div>
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title" id="fifthday"></h5>
+                  <i class='fas fa-bolt' style="font-size: 36px;"></i>
+                  <p class="card-text">Temp: <span id="day5temp"></span></p>
+                  <p class="card-text">Humidity: <span id="day5humid"></span></p>
+                </div>
+              </div>
+          </div>
 
       </div>
-      <div class="container">
-      <div class="row">
-        <div class="col-sm"></div>
-        <div class="card" style="width: 12rem; background-color: blue;">
-            <div class="card-body">
-              <h5 class="card-title">Day1</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              
-            </div>
-          </div>
-        <div class="col-sm"></div>
-        <div class="card" style="width: 12rem; background-color: blue;">
-            <div class="card-body">
-              <h5 class="card-title">day2</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              
-            </div>
-          </div>
-        <div class="col-sm"></div>
-        <div class="card" style="width: 12rem; background-color: blue;">
-            <div class="card-body">
-              <h5 class="card-title">day3</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
-        <div class="col-sm"></div>
-        <div class="card" style="width: 12em; background-color: blue; ">
-            <div class="card-body">
-              <h5 class="card-title">day4</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
-        <div class="col-sm"></div>
-        <div class="card" style="width: 12rem; background-color: blue;">
-            <div class="card-body">
-              <h5 class="card-title">day5</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="card-link">Card link</a>
-              <a href="#" class="card-link">Another link</a>
-            </div>
-          </div>
-      </div>
-                </div>
+
               </div>
           </div>
         </div>
